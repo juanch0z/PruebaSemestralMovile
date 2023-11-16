@@ -1,0 +1,54 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="titulo"> Bienvenido </ion-title>
+    <p class="subTitulo"> Ingrese sus datos para poder registrarse.</p>
+  </div>
+
+  <form>
+    <br>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input class="input" name="nombre" id="nombre" required></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input class="input" name="apellido" id="apellido" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Rut</ion-label>
+      <ion-input class="input" name="rut" id="rut" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Carrera</ion-label>
+      <ion-input class="input" name="carrera" id="carrera" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input class="input" name="contrasena" id="contrasena" required type="password"></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-select placeholder="Seleccione una región" (ionChange)="onRegionChange($event)">
+          <div slot="label">Region</div>
+          <ion-select-option name="region" id="region" *ngFor="let region of regions" [value]="region.id">{{ region.nombre }}</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-select placeholder="Seleccione una comuna">
+          <div slot="label">Comuna</div>
+          <ion-select-option name="comuna" id="comuna" *ngFor="let comuna of comunas" [value]="comuna.id">{{ comuna.nombre }}</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </form>
+  
+
+  <ion-button fill="outline" shape="round" expand="block" (click)="registro()">Registrar</ion-button>
+  <ion-button fill="outline" shape="round" expand="block" (click)="backtohome()">Volver a home</ion-button>
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="titulo"> Bienvenido </ion-title>
+    <p class="subTitulo"> Inicia sesión para ingresar.</p>
+  </div>
+
+
+  <div class="ion-padding" id="container">
+    <ion-item>
+      <ion-input class="input" id="rut" name="rut" label="Rut" labelPlacement="floating" placeholder="Ingrese rut alumno"></ion-input>
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-input class="input" id="contrasenadd" name="contrasenadd" label="Contaseña" labelPlacement="floating" type="password" placeholder="Ingrese contraseña"></ion-input>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+    </ion-item>
+    <div class="clave">
+      <p><a [routerLink]="['/recuperarpassword']"> Olvidaste tu clave?</a></p>
+    </div>
+    <ion-button fill="outline" shape="round" expand="block" (click)="login()" [routerLink]="['/cam']">Iniciar sesion</ion-button>
+    <ion-button fill="outline" shape="round" expand="block" (click)="backtohome()">Volver a home</ion-button>
+  </div>
+
+</ion-content>
+
